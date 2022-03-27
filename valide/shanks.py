@@ -13,22 +13,22 @@ def mod_inverse(x,m):
 
 
 p = int(input("Saisissez p : "))
-P = int(input("Saisissez P : "))
+c1 = int(input("Saisissez C1 : "))
 alpha = int(input("Saisissez alpha : "))
 
-def shanks(P, alpha, p):
+def shanks(c1, alpha, p):
     f1 = []
     f2 = []
 
     m = floor(sqrt(p-1))
-    print("Sachant que P=alpha^(s), P*(alpha^(-a))^r = (alpha^(m))^(q)")
-    print(P, "*(", mod_inverse(alpha,p), ")^(r)=(",(alpha**m)%p,")^q")
+    print("Sachant que C1=alpha^(s), C1*(alpha^(-a))^r = (alpha^(m))^(q)")
+    print(c1, "*(", mod_inverse(alpha,p), ")^(r)=(",(alpha**m)%p,")^q")
 
     for q in range((ceil(sqrt(p-1)))+1):
         f1.append(((alpha**m)**q)%p)
 
     for r in range(m):
-        f2.append((P*(mod_inverse(alpha,p))**r)%p)
+        f2.append((c1*(mod_inverse(alpha,p))**r)%p)
 
     print(f1)
     print(f2)
@@ -40,6 +40,6 @@ def shanks(P, alpha, p):
                 r = j
 
     print("Donc nous avons q = ", q, " et r = ", r)
-    print("Soit s = ", q, "*", m, "+", r, "=", (q*m+r)%p)
+    print("Soit k = ", q, "*", m, "+", r, "=", (q*m+r)%p)
 
-shanks(P, alpha, p)
+shanks(c1, alpha, p)

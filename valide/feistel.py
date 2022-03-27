@@ -38,10 +38,11 @@ def feistel(paquets, dicos):
 		temp = d
 		print("g", i, "=", intToBin(g), " et d", i, "=", intToBin(d))
 		d = g ^ dicos[i][d]
-		print("d", i+1, "=", intToBin(g), " XOR f", i+1, "(", intToBin(d), ")")
+		print("d", i+1, "=", intToBin(g), " XOR f", i+1, "(", intToBin(temp), ")")
 		g = temp
 
 	temp = g
+	
 	g = intToBin(d)
 	d = intToBin(temp)
 	return(g, d)
